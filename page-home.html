@@ -1,0 +1,457 @@
+        <section id="page-home">
+            
+            <!-- Hero -->
+            <section class="hero-gradient text-white py-20 md:py-28 px-4 relative overflow-hidden">
+                <!-- 背景装飾SVG -->
+                <div class="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
+                    <svg class="absolute top-10 right-10 w-64 h-64" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffffff" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.4C64.8,55.6,53.8,67.4,40.3,74.8C26.8,82.2,10.8,85.2,-4.8,83.3C-20.4,81.4,-35.5,74.6,-48.1,66.1C-60.7,57.6,-70.8,47.4,-77.2,35.2C-83.6,23,-86.3,8.8,-84.9,-4.9C-83.5,-18.6,-78,-31.8,-69.8,-43.3C-61.6,-54.8,-50.7,-64.6,-38.1,-72.4C-25.5,-80.2,-11.2,-86,2.3,-90.1C15.8,-94.2,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+                    </svg>
+                    <svg class="absolute bottom-10 left-10 w-48 h-48" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffffff" d="M39.5,-65.6C51.4,-58.5,61.3,-47.3,67.8,-34.2C74.3,-21.1,77.4,-6.1,76.1,8.5C74.8,23.1,69.1,37.3,59.8,48.3C50.5,59.3,37.6,67.1,23.8,71.3C10,75.5,-4.7,76.1,-18.8,73.2C-32.9,70.3,-46.4,63.9,-56.8,53.8C-67.2,43.7,-74.5,29.9,-76.8,15.3C-79.1,0.7,-76.4,-14.7,-69.8,-27.8C-63.2,-40.9,-52.7,-51.7,-40.6,-58.7C-28.5,-65.7,-14.2,-68.9,0.3,-69.4C14.8,-69.9,27.6,-72.7,39.5,-65.6Z" transform="translate(100 100)" />
+                    </svg>
+                </div>
+
+                                <!-- 透過写真クロスフェード（右側背景に配置） -->
+                <div class="absolute inset-0 pointer-events-none overflow-hidden" id="hero-img-container">
+                    <img id="hero-img-1"
+                         src="./hero-img-1.webp"
+                         alt=""
+                         aria-hidden="true"
+                         style="position:absolute; right:0; top:50%; transform:translateY(-50%); height:115%; width:auto; max-width:68%; object-fit:cover; mix-blend-mode:luminosity; opacity:0.52; transition:opacity 1.5s ease-in-out;"
+                    />
+                    <img id="hero-img-2"
+                         src="./hero-img-2.webp"
+                         alt=""
+                         aria-hidden="true"
+                         style="position:absolute; left:0; top:50%; transform:translateY(-50%); height:115%; width:auto; max-width:68%; object-fit:cover; mix-blend-mode:luminosity; opacity:0.52; transition:opacity 1.5s ease-in-out; opacity:0;"
+                    />
+                </div>
+
+                <!-- コンテンツ（左寄せ・テキスト可読性確保） -->
+                <div class="max-w-6xl mx-auto relative z-10">
+                    <div class="max-w-2xl">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/30 text-white px-5 py-2 rounded-full text-xs mb-8 font-medium">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            宮城県仙台市宮城野区
+                        </div>
+                        <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            経営者の<span class="text-blue-200">「労務の悩み」</span>を<br class="md:hidden">解決する、<br>地域密着のパートナー
+                        </h2>
+                        <p class="text-lg md:text-xl mb-10 opacity-95 font-light leading-relaxed">
+                            複雑な労務管理、頻繁な法改正対応、従業員とのトラブル防止...<br class="hidden md:block">
+                            中小企業の経営者様が本業に専念できるよう、<br class="hidden md:block">
+                            <span class="font-medium">誠実な対応</span>と<span class="font-medium">確かな専門知識</span>でサポートいたします。
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-5 mb-12">
+                            <button onclick="showPage('contact')" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-5 px-6 w-full sm:w-auto rounded-xl shadow-2xl transition transform hover:scale-105 text-lg">
+                                初回無料相談（60分）
+                            </button>
+                            <button onclick="showPage('services')" class="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/50 font-bold py-5 px-6 w-full sm:w-auto rounded-xl transition text-lg">
+                                サービス一覧
+                            </button>
+                            <button onclick="showPage('blog')" class="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/50 font-bold py-5 px-6 w-full sm:w-auto rounded-xl transition text-lg flex items-center gap-2">
+                                📝 労務管理コラム
+                            </button>
+                            <button onclick="showPage('price-sim')" class="bg-amber-400 hover:bg-amber-300 text-amber-900 font-bold py-5 px-6 w-full sm:w-auto rounded-xl shadow-lg transition text-lg flex items-center gap-2">
+                                🧮 料金シミュレーター
+                            </button>
+                        </div>
+                        <div class="flex flex-wrap gap-4 text-sm">
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                                <span>社会保険労務士資格保有</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-200" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+                                <span>地域密着10年以上の実績</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                                <span>初回相談完全無料</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access -->
+            <div class="container mx-auto px-4 -mt-16 mb-20 relative z-10">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-10 border border-gray-100">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                        <div class="text-center md:text-left md:min-w-[220px]">
+                            <h3 class="font-bold text-xl text-blue-900 mb-1">お悩みから探す</h3>
+                            <p class="text-sm text-gray-500">よくあるご相談内容</p>
+                        </div>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                            <button onclick="showSolution('subsidy')" class="bg-blue-50 hover:bg-blue-900 hover:text-white transition text-blue-800 px-5 py-3 rounded-full border border-blue-200 text-sm font-medium shadow-sm">💰 助成金を活用したい</button>
+                            <button onclick="showSolution('payroll')" class="bg-blue-50 hover:bg-blue-900 hover:text-white transition text-blue-800 px-5 py-3 rounded-full border border-blue-200 text-sm font-medium shadow-sm">📊 給与計算を任せたい</button>
+                            <button onclick="showSolution('trouble')" class="bg-blue-50 hover:bg-blue-900 hover:text-white transition text-blue-800 px-5 py-3 rounded-full border border-blue-200 text-sm font-medium shadow-sm">⚖️ 労務トラブル予防</button>
+                            <button onclick="showSolution('startup')" class="bg-blue-50 hover:bg-blue-900 hover:text-white transition text-blue-800 px-5 py-3 rounded-full border border-blue-200 text-sm font-medium shadow-sm">🏢 会社設立サポート</button>
+                            <button onclick="showSolution('it')" class="bg-blue-50 hover:bg-blue-900 hover:text-white transition text-blue-800 px-5 py-3 rounded-full border border-blue-200 text-sm font-medium shadow-sm">💻 勤怠管理DX支援</button>
+                            <button onclick="showSolution('employment')" class="bg-blue-50 hover:bg-blue-900 hover:text-white transition text-blue-800 px-5 py-3 rounded-full border border-blue-200 text-sm font-medium shadow-sm">📝 就業規則を整備したい</button>
+                            <button onclick="showPage('salary-calc')" class="bg-orange-50 hover:bg-orange-500 hover:text-white transition text-orange-700 px-5 py-3 rounded-full border border-orange-200 text-sm font-medium shadow-sm">🧮 給与・保険料を試算したい</button>
+                            <button onclick="showPage('spot')" class="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-full border border-green-600 text-sm font-bold shadow-md">📋 入退社の手続きを今すぐ依頼</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ★ スポット手続き依頼バナー ★ -->
+            <div class="container mx-auto px-4 mb-16 relative z-10">
+                <div class="max-w-5xl mx-auto">
+                    <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-green-200">
+                        <!-- 左帯アクセント -->
+                        <div class="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-green-500 to-green-700"></div>
+                        <div class="pl-8 pr-6 py-8 md:py-10 md:pr-10">
+                            <div class="flex flex-col md:flex-row items-center gap-8">
+                                <!-- 左：テキスト -->
+                                <div class="flex-1">
+                                    <div class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-1.5 rounded-full text-xs font-bold mb-4">
+                                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                                        新サービス開始
+                                    </div>
+                                    <h3 class="text-2xl md:text-3xl font-black text-blue-900 mb-3 leading-tight">
+                                        入退社の手続き、<br class="md:hidden">フォームから<span class="text-green-600">今すぐ依頼</span>できます
+                                    </h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-5">
+                                        社会保険・雇用保険の手続きをWebフォームに入力するだけで代行依頼が完了。<br class="hidden md:block">
+                                        忙しい経営者様の手続き負担をゼロにします。
+                                    </p>
+                                    <!-- 4種類の手続きカード -->
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+                                        <button onclick="showPage('spot'); setTimeout(()=>spotSwitchTab(0),100)" class="bg-blue-50 hover:bg-blue-900 hover:text-white transition rounded-xl p-3 text-center border border-blue-200 group">
+                                            <div class="text-xl mb-1">👤</div>
+                                            <p class="text-xs font-bold text-blue-900 group-hover:text-white leading-tight">雇用保険<br>資格取得届</p>
+                                        </button>
+                                        <button onclick="showPage('spot'); setTimeout(()=>spotSwitchTab(1),100)" class="bg-orange-50 hover:bg-orange-600 hover:text-white transition rounded-xl p-3 text-center border border-orange-200 group">
+                                            <div class="text-xl mb-1">📤</div>
+                                            <p class="text-xs font-bold text-orange-800 group-hover:text-white leading-tight">雇用保険<br>資格喪失・離職票</p>
+                                        </button>
+                                        <button onclick="showPage('spot'); setTimeout(()=>spotSwitchTab(2),100)" class="bg-green-50 hover:bg-green-700 hover:text-white transition rounded-xl p-3 text-center border border-green-200 group">
+                                            <div class="text-xl mb-1">🏥</div>
+                                            <p class="text-xs font-bold text-green-800 group-hover:text-white leading-tight">社会保険<br>資格取得届</p>
+                                        </button>
+                                        <button onclick="showPage('spot'); setTimeout(()=>spotSwitchTab(3),100)" class="bg-purple-50 hover:bg-purple-700 hover:text-white transition rounded-xl p-3 text-center border border-purple-200 group">
+                                            <div class="text-xl mb-1">🚪</div>
+                                            <p class="text-xs font-bold text-purple-800 group-hover:text-white leading-tight">社会保険<br>資格喪失届</p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- 右：CTAボタン -->
+                                <div class="flex-shrink-0 text-center">
+                                    <button onclick="showPage('spot')" class="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-black py-5 px-10 rounded-2xl shadow-xl transition transform hover:scale-105 text-lg flex items-center gap-3 mx-auto mb-3">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                        手続きを依頼する
+                                    </button>
+                                    <p class="text-xs text-gray-400">最短翌営業日対応 ・ 電子申請対応</p>
+                                    <div class="mt-3 bg-green-50 border border-green-200 rounded-xl px-4 py-2">
+                                        <p class="text-xs text-green-700 font-bold">顧問契約不要・スポット依頼OK</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新規顧問契約特典 -->
+            <div class="container mx-auto px-4 mb-20 relative">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-6 animate-bounce">
+                        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-900 to-blue-700 text-white px-8 py-4 rounded-full shadow-2xl font-black text-lg border-4 border-blue-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                            </svg>
+                            <span>今だけの特別キャンペーン！</span>
+                        </div>
+                    </div>
+                    
+                    <div class="relative bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 rounded-[2.5rem] shadow-[0_20px_60px_rgba(234,88,12,0.5)] p-1 animate-pulse-slow">
+                        <div class="bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 rounded-[2.3rem] p-8 md:p-12 relative overflow-hidden">
+                            <div class="absolute top-4 right-4 text-yellow-300 text-4xl animate-ping">✨</div>
+                            <div class="absolute top-8 left-8 text-yellow-300 text-3xl animate-ping" style="animation-delay: 0.5s;">⭐</div>
+                            <div class="absolute bottom-8 right-12 text-yellow-300 text-5xl animate-ping" style="animation-delay: 1s;">🎁</div>
+                            <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48"></div>
+                            <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full -ml-32 -mb-32"></div>
+                            <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[32px] border-r-[32px] border-t-[32px] border-l-transparent border-r-transparent border-t-pink-600"></div>
+                            
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-center mb-8">
+                                    <div class="bg-white px-8 py-4 rounded-2xl font-black text-xl shadow-2xl border-4 border-yellow-400">
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-4xl">🎉</span>
+                                            <span class="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">期間限定！新規顧問契約特典</span>
+                                            <span class="text-4xl">🎉</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mb-10">
+                                    <div class="inline-block bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full mb-4">
+                                        <p class="text-yellow-300 font-bold text-sm">顧問契約締結企業様限定プレゼント</p>
+                                    </div>
+                                    <h3 class="text-4xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
+                                        簡易出退勤アプリを<br class="md:hidden">
+                                        <span class="text-yellow-300 text-5xl md:text-7xl">完全無料</span>で提供！
+                                    </h3>
+                                    <p class="text-white text-xl md:text-2xl leading-relaxed font-bold drop-shadow-lg">
+                                        「タイムカード管理が面倒」「Excelでは不安」<br class="hidden md:block">
+                                        そんなお悩みを<span class="bg-yellow-300 text-orange-600 px-3 py-1 rounded-lg">ゼロ円</span>で解決します！
+                                    </p>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                                    <div class="bg-white rounded-3xl p-8 text-center shadow-2xl transform hover:scale-105 transition border-4 border-yellow-300">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-5 shadow-xl">
+                                            <svg class="w-11 h-11 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        </div>
+                                        <h4 class="font-black text-xl mb-3 text-gray-800">ワンタッチ打刻</h4>
+                                        <p class="text-gray-600 font-medium">スマホ・PCから<br>簡単に出退勤を記録</p>
+                                    </div>
+                                    <div class="bg-white rounded-3xl p-8 text-center shadow-2xl transform hover:scale-105 transition border-4 border-yellow-300">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-5 shadow-xl">
+                                            <svg class="w-11 h-11 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                        </div>
+                                        <h4 class="font-black text-xl mb-3 text-gray-800">自動集計</h4>
+                                        <p class="text-gray-600 font-medium">勤怠データを自動集計<br>CSV出力も可能</p>
+                                    </div>
+                                    <div class="bg-white rounded-3xl p-8 text-center shadow-2xl transform hover:scale-105 transition border-4 border-yellow-300">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-5 shadow-xl">
+                                            <svg class="w-11 h-11 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        </div>
+                                        <h4 class="font-black text-xl mb-3 text-gray-800">ずっと0円</h4>
+                                        <p class="text-gray-600 font-medium">初期費用・月額費用<br>すべて無料</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-yellow-300 rounded-3xl p-8 mb-10 border-4 border-yellow-500 shadow-2xl">
+                                    <div class="flex items-start gap-5 text-gray-900">
+                                        <svg class="w-12 h-12 flex-shrink-0 mt-1 text-red-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                                        <div>
+                                            <h5 class="font-black text-2xl mb-3 text-red-600">💡 こんな企業様におすすめ</h5>
+                                            <p class="text-lg leading-relaxed font-bold text-gray-900">
+                                                タイムカードの手作業集計から解放されたい／Excelでの管理ミスをなくしたい／従業員の勤怠を正確に把握したい／低コストで勤怠管理を始めたい
+                                            </p>
+                                            <p class="text-lg mt-4 leading-relaxed font-black text-red-700">
+                                                ⚡ 顧問契約期間中は<span class="text-2xl underline">永久無料</span>でご利用いただけます！
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <button onclick="showPage('contact')" class="bg-white text-orange-600 hover:bg-yellow-50 font-black py-8 px-16 md:px-20 rounded-[2rem] transition shadow-[0_10px_40px_rgba(0,0,0,0.3)] text-2xl md:text-3xl transform hover:scale-110 inline-flex items-center gap-4 border-4 border-yellow-300 animate-bounce-slow">
+                                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                        <span>今すぐ無料相談</span>
+                                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                                    </button>
+                                    <p class="text-white text-lg mt-6 font-bold drop-shadow-lg">
+                                        ※ まずはお気軽にお問い合わせください　相談は完全無料です
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <section class="container mx-auto px-4 py-16 md:py-24">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6 section-title">当事務所の3つの特長</h3>
+                    <p class="text-gray-600 mt-8">地域の経営者様に選ばれ続ける理由があります</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+                    <div class="text-center p-8 md:p-10 bg-white rounded-2xl shadow-md border border-gray-100 card-hover">
+                        <div class="w-32 h-32 mx-auto mb-6">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="90" fill="#DBEAFE"/>
+                                <rect x="60" y="70" width="80" height="80" fill="#1E40AF" rx="4"/>
+                                <rect x="70" y="80" width="15" height="15" fill="#60A5FA" rx="2"/>
+                                <rect x="92.5" y="80" width="15" height="15" fill="#60A5FA" rx="2"/>
+                                <rect x="115" y="80" width="15" height="15" fill="#60A5FA" rx="2"/>
+                                <rect x="70" y="102" width="15" height="15" fill="#60A5FA" rx="2"/>
+                                <rect x="92.5" y="102" width="15" height="15" fill="#60A5FA" rx="2"/>
+                                <rect x="115" y="102" width="15" height="15" fill="#60A5FA" rx="2"/>
+                                <rect x="85" y="125" width="30" height="25" fill="#3B82F6" rx="2"/>
+                                <circle cx="100" cy="45" r="12" fill="#F97316"/>
+                                <circle cx="100" cy="45" r="6" fill="#FFF"/>
+                                <path d="M 100 57 Q 90 67 100 75 Q 110 67 100 57" fill="#F97316"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-4 text-blue-900">地域密着のきめ細やかさ</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            仙台市宮城野区福室を拠点に、区内企業様へは迅速に訪問対応。「顔の見える関係」を大切にし、メールやチャットだけでは伝わりにくい経営課題も、直接お会いして丁寧にヒアリングいたします。
+                        </p>
+                    </div>
+                    <div class="text-center p-8 md:p-10 bg-white rounded-2xl shadow-md border border-gray-100 card-hover">
+                        <div class="w-32 h-32 mx-auto mb-6">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="90" fill="#DBEAFE"/>
+                                <rect x="50" y="60" width="100" height="85" fill="#1E40AF" rx="4"/>
+                                <rect x="55" y="65" width="90" height="75" fill="#3B82F6" rx="3"/>
+                                <line x1="100" y1="65" x2="100" y2="140" stroke="#1E40AF" stroke-width="3"/>
+                                <rect x="60" y="75" width="30" height="3" fill="#DBEAFE" rx="1"/>
+                                <rect x="60" y="85" width="30" height="3" fill="#DBEAFE" rx="1"/>
+                                <rect x="60" y="95" width="25" height="3" fill="#DBEAFE" rx="1"/>
+                                <rect x="110" y="75" width="30" height="3" fill="#DBEAFE" rx="1"/>
+                                <rect x="110" y="85" width="30" height="3" fill="#DBEAFE" rx="1"/>
+                                <rect x="110" y="95" width="25" height="3" fill="#DBEAFE" rx="1"/>
+                                <polygon points="100,30 70,42 70,48 100,36 130,48 130,42" fill="#F97316"/>
+                                <rect x="95" y="36" width="10" height="15" fill="#F97316"/>
+                                <circle cx="100" cy="51" r="3" fill="#FFF"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-4 text-blue-900">確かな専門知識と誠実さ</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            社会保険労務士として、常に最新の法令を学び続けています。専門用語を並べるのではなく、経営者様に「分かりやすく、実践しやすい」形でお伝えすることを心がけています。
+                        </p>
+                    </div>
+                    <div class="text-center p-8 md:p-10 bg-white rounded-2xl shadow-md border border-gray-100 card-hover">
+                        <div class="w-32 h-32 mx-auto mb-6">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="90" fill="#DBEAFE"/>
+                                <circle cx="100" cy="80" r="30" fill="#FCD34D"/>
+                                <path d="M 85 105 Q 85 115 90 120 L 110 120 Q 115 115 115 105" fill="#1E40AF"/>
+                                <rect x="92" y="120" width="16" height="8" fill="#3B82F6" rx="2"/>
+                                <rect x="95" y="128" width="10" height="4" fill="#1E40AF" rx="1"/>
+                                <line x1="100" y1="40" x2="100" y2="30" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+                                <line x1="130" y1="50" x2="138" y2="42" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+                                <line x1="145" y1="80" x2="155" y2="80" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+                                <line x1="70" y1="50" x2="62" y2="42" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+                                <line x1="55" y1="80" x2="45" y2="80" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M 100 145 L 100 165 M 92 153 L 100 145 L 108 153" stroke="#F97316" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-4 text-blue-900">攻めの労務コンサルティング</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            単なる手続き代行に留まらず、助成金活用や人材定着のための制度設計など、企業成長を後押しする「攻め」の提案を行います。ITツール導入支援も得意分野です。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="bg-gradient-to-br from-blue-900 to-blue-700 py-16 md:py-20">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                        <div class="fade-in-up bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/15 transition">
+                            <div class="text-5xl md:text-6xl font-black mb-3 text-white drop-shadow-lg">10<span class="text-3xl">+</span></div>
+                            <p class="text-sm md:text-base font-medium text-blue-100">実務経験年数</p>
+                        </div>
+                        <div class="fade-in-up bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/15 transition">
+                            <div class="text-5xl md:text-6xl font-black mb-3 text-white drop-shadow-lg">100<span class="text-3xl">+</span></div>
+                            <p class="text-sm md:text-base font-medium text-blue-100">関与先企業数</p>
+                        </div>
+                        <div class="fade-in-up bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/15 transition">
+                            <div class="text-5xl md:text-6xl font-black mb-3 text-white drop-shadow-lg">95<span class="text-3xl">%</span></div>
+                            <p class="text-sm md:text-base font-medium text-blue-100">顧客満足度</p>
+                        </div>
+                        <div class="fade-in-up bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/15 transition">
+                            <div class="text-5xl md:text-6xl font-black mb-3 text-white drop-shadow-lg">60<span class="text-2xl">分</span></div>
+                            <p class="text-sm md:text-base font-medium text-blue-100">無料初回相談</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="container mx-auto px-4 py-16 md:py-24">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6 section-title">お客様の声</h3>
+                    <p class="text-gray-600 mt-8">仙台の経営者様からいただいた信頼の言葉</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="testimonial-card p-8 rounded-xl shadow-md">
+                        <div class="flex items-center gap-3 mb-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 font-bold text-lg">A</div><div><p class="font-bold text-gray-800">建設業 A社様</p><p class="text-xs text-gray-500">従業員15名</p></div></div>
+                        <p class="text-gray-700 leading-relaxed text-sm mb-4">「初めての助成金申請で不安でしたが、神植社労士が申請書類の作成から提出まで全てサポートしてくださり、無事に受給できました。地元の事務所なので相談しやすく、とても心強いです。」</p>
+                        <div class="flex gap-1 text-orange-400 text-sm">★★★★★</div>
+                    </div>
+                    <div class="testimonial-card p-8 rounded-xl shadow-md">
+                        <div class="flex items-center gap-3 mb-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 font-bold text-lg">B</div><div><p class="font-bold text-gray-800">医療業 B社様</p><p class="text-xs text-gray-500">従業員22名</p></div></div>
+                        <p class="text-gray-700 leading-relaxed text-sm mb-4">「給与計算や社会保険手続きを全てお任せしています。法改正の情報も分かりやすく教えていただけるので、安心して本業に集中できます。宮城野区で労務士をお探しなら絶対おすすめです。」</p>
+                        <div class="flex gap-1 text-orange-400 text-sm">★★★★★</div>
+                    </div>
+                    <div class="testimonial-card p-8 rounded-xl shadow-md">
+                        <div class="flex items-center gap-3 mb-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 font-bold text-lg">C</div><div><p class="font-bold text-gray-800">運輸業 C社様</p><p class="text-xs text-gray-500">従業員18名</p></div></div>
+                        <p class="text-gray-700 leading-relaxed text-sm mb-4">「36協定や就業規則の見直しをお願いしました。ドライバーの労働時間管理が複雑ですが、丁寧にアドバイスいただき、法令遵守の体制を整えることができました。」</p>
+                        <div class="flex gap-1 text-orange-400 text-sm">★★★★★</div>
+                    </div>
+                    <div class="testimonial-card p-8 rounded-xl shadow-md">
+                        <div class="flex items-center gap-3 mb-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 font-bold text-lg">D</div><div><p class="font-bold text-gray-800">IT業 D社様</p><p class="text-xs text-gray-500">従業員8名</p></div></div>
+                        <p class="text-gray-700 leading-relaxed text-sm mb-4">「スタートアップで労務管理の知識がありませんでしたが、社会保険の加入から就業規則作成まで一貫してサポートいただきました。IT業界の働き方にも理解があり助かっています。」</p>
+                        <div class="flex gap-1 text-orange-400 text-sm">★★★★★</div>
+                    </div>
+                    <div class="testimonial-card p-8 rounded-xl shadow-md">
+                        <div class="flex items-center gap-3 mb-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 font-bold text-lg">E</div><div><p class="font-bold text-gray-800">製造業 E社様</p><p class="text-xs text-gray-500">従業員30名</p></div></div>
+                        <p class="text-gray-700 leading-relaxed text-sm mb-4">「クラウド勤怠システムの導入を支援していただきました。タイムカードから脱却でき、残業管理が格段に楽になりました。神植社労士の丁寧な説明で従業員も抵抗なく移行できました。」</p>
+                        <div class="flex gap-1 text-orange-400 text-sm">★★★★★</div>
+                    </div>
+                    <div class="testimonial-card p-8 rounded-xl shadow-md">
+                        <div class="flex items-center gap-3 mb-4"><div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 font-bold text-lg">F</div><div><p class="font-bold text-gray-800">小売業 F社様</p><p class="text-xs text-gray-500">従業員12名</p></div></div>
+                        <p class="text-gray-700 leading-relaxed text-sm mb-4">「従業員とのトラブルで困っていた時、神植社労士に相談しました。法的な観点から適切なアドバイスをいただき、円満に解決できました。今では顧問契約を結び、安心して経営に専念できています。」</p>
+                        <div class="flex gap-1 text-orange-400 text-sm">★★★★★</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 新着コラム セクション ===== -->
+            <section id="home-columns-section" class="py-20 md:py-28 bg-white relative overflow-hidden">
+                <!-- 背景装飾 -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full -mr-48 -mt-48 opacity-60 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-50 rounded-full -ml-32 -mb-32 opacity-60 pointer-events-none"></div>
+
+                <div class="container mx-auto px-4 max-w-6xl relative z-10">
+                    <!-- セクションヘッダー -->
+                    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="inline-flex items-center gap-2 bg-blue-900 text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">
+                                    <span class="w-1.5 h-1.5 bg-orange-400 rounded-full animate-pulse"></span>
+                                    最新コラム
+                                </span>
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-black text-blue-900 leading-tight">
+                                労務管理コラム
+                                <span class="block text-lg md:text-xl font-normal text-gray-500 mt-2">経営者・労務担当者に役立つ実務情報</span>
+                            </h2>
+                        </div>
+                        <button onclick="showPage('blog')"
+                            class="group inline-flex items-center gap-2 text-blue-900 font-bold border-2 border-blue-900 px-6 py-3 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-300 flex-shrink-0 self-start md:self-auto">
+                            コラム一覧を見る
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- コラムカード グリッド -->
+                    <div id="home-columns-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- JSで最新3件を描画 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section id="common-cta" class="bg-gradient-to-r from-orange-50 to-blue-50 py-16 md:py-20">
+                <div class="container mx-auto px-4 text-center">
+                    <h3 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">まずは無料相談から始めてみませんか？</h3>
+                    <p class="text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        労務管理でお困りのこと、些細なことでも構いません。<br class="hidden md:block">
+                        初回60分の無料相談で、貴社に最適な解決策をご提案いたします。
+                    </p>
+                    <div class="flex flex-col md:flex-row justify-center gap-5">
+                        <button onclick="showPage('contact')" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-5 px-12 rounded-xl shadow-xl transition transform hover:scale-105 text-lg">📞 今すぐ無料相談を予約</button>
+                        <a href="tel:07010471625" class="bg-white hover:bg-gray-50 text-blue-900 border-2 border-blue-900 font-bold py-5 px-12 rounded-xl transition text-lg flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                            070-1047-1625
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-6">受付時間：平日 9:00〜17:00</p>
+                </div>
+            </section>
+
+        </section>

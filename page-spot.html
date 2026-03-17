@@ -1,0 +1,603 @@
+        <!-- SPOT PROCEDURE PAGE (スポット手続き依頼) -->
+        <section id="page-spot" class="hidden py-16 md:py-24" style="background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 50%, #f8faff 100%);">
+            <div class="container mx-auto px-4 max-w-5xl">
+
+                <!-- ヘッダー -->
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-white border-2 border-blue-200 px-6 py-2 rounded-full text-sm font-bold text-blue-900 mb-6 shadow-sm">
+                        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        社会保険・雇用保険 手続き代行
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-blue-900 mb-4">📋 スポット手続き依頼</h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">必要事項を入力するだけで、社会保険・雇用保険の手続き代行をご依頼いただけます。<br class="hidden md:block">内容確認後、担当者よりご連絡いたします。</p>
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <span class="bg-green-100 text-green-800 px-4 py-1.5 rounded-full font-medium">✓ 最短翌営業日対応</span>
+                        <span class="bg-blue-100 text-blue-800 px-4 py-1.5 rounded-full font-medium">✓ 電子申請対応</span>
+                        <span class="bg-orange-100 text-orange-800 px-4 py-1.5 rounded-full font-medium">✓ 入力内容は暗号化されません。個人情報の取り扱いにご注意ください</span>
+                    </div>
+                </div>
+
+                <!-- 手続き種別タブ -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-blue-100">
+
+                    <!-- タブナビ -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 border-b border-gray-200">
+                        <button id="spot-tab-0" onclick="spotSwitchTab(0)" class="spot-tab-btn active py-4 px-3 text-center text-sm font-bold transition border-b-4 border-blue-900 text-blue-900 bg-blue-50">
+                            <div class="text-2xl mb-1">👤</div>
+                            <div class="leading-tight">雇用保険<br><span class="text-xs font-normal">資格取得届</span></div>
+                        </button>
+                        <button id="spot-tab-1" onclick="spotSwitchTab(1)" class="spot-tab-btn py-4 px-3 text-center text-sm font-bold transition border-b-4 border-transparent text-gray-500 hover:text-blue-700 hover:bg-blue-50">
+                            <div class="text-2xl mb-1">📤</div>
+                            <div class="leading-tight">雇用保険<br><span class="text-xs font-normal">資格喪失届・離職票</span></div>
+                        </button>
+                        <button id="spot-tab-2" onclick="spotSwitchTab(2)" class="spot-tab-btn py-4 px-3 text-center text-sm font-bold transition border-b-4 border-transparent text-gray-500 hover:text-blue-700 hover:bg-blue-50">
+                            <div class="text-2xl mb-1">🏥</div>
+                            <div class="leading-tight">社会保険<br><span class="text-xs font-normal">資格取得届</span></div>
+                        </button>
+                        <button id="spot-tab-3" onclick="spotSwitchTab(3)" class="spot-tab-btn py-4 px-3 text-center text-sm font-bold transition border-b-4 border-transparent text-gray-500 hover:text-blue-700 hover:bg-blue-50">
+                            <div class="text-2xl mb-1">🚪</div>
+                            <div class="leading-tight">社会保険<br><span class="text-xs font-normal">資格喪失届</span></div>
+                        </button>
+                    </div>
+
+                    <!-- フォームエリア -->
+                    <div class="p-6 md:p-10">
+
+                        <!-- ===== フォーム0: 雇用保険 資格取得届 ===== -->
+                        <div id="spot-form-0" class="spot-form">
+                            <div class="flex items-center gap-3 mb-8">
+                                <div class="w-12 h-12 bg-blue-900 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">👤</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-blue-900">雇用保険被保険者資格取得届</h3>
+                                    <p class="text-sm text-gray-500">新規雇用・採用時に必要な届出です（雇用翌月10日まで）</p>
+                                </div>
+                            </div>
+
+                            <form id="spot-form-data-0" class="space-y-6">
+                                <div class="bg-blue-50 rounded-2xl p-5 mb-6">
+                                    <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2"><span class="bg-blue-900 text-white w-6 h-6 rounded text-xs flex items-center justify-center">会</span>事業所情報</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="spot-field">
+                                            <label class="spot-label">事業所名 <span class="required">*</span></label>
+                                            <input type="text" name="company" placeholder="例：株式会社〇〇" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">雇用保険事業所番号 <span class="spot-hint">（11桁）</span></label>
+                                            <input type="text" name="hellowork_no" placeholder="例：04-000000-0" class="spot-input" maxlength="14">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">担当者名 <span class="required">*</span></label>
+                                            <input type="text" name="contact_name" placeholder="例：田中 太郎" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">連絡先電話番号 <span class="required">*</span></label>
+                                            <input type="tel" name="contact_tel" placeholder="例：022-XXX-XXXX" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">メールアドレス <span class="required">*</span></label>
+                                            <input type="email" name="contact_email" placeholder="例：info@example.com" class="spot-input" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-2xl p-5">
+                                    <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2"><span class="bg-green-600 text-white w-6 h-6 rounded text-xs flex items-center justify-center">被</span>被保険者（従業員）情報</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="spot-field">
+                                            <label class="spot-label">氏名（漢字） <span class="required">*</span></label>
+                                            <input type="text" name="emp_name_kanji" placeholder="例：山田 花子" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">氏名（カナ） <span class="required">*</span></label>
+                                            <input type="text" name="emp_name_kana" placeholder="例：ヤマダ ハナコ" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">生年月日 <span class="required">*</span></label>
+                                            <input type="date" name="emp_birth" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">性別 <span class="required">*</span></label>
+                                            <select name="emp_gender" class="spot-input" required>
+                                                <option value="">選択してください</option>
+                                                <option value="male">男性</option>
+                                                <option value="female">女性</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">雇用年月日（資格取得日） <span class="required">*</span></label>
+                                            <input type="date" name="emp_hire_date" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">雇用形態 <span class="required">*</span></label>
+                                            <select name="emp_type" class="spot-input" required>
+                                                <option value="">選択してください</option>
+                                                <option value="regular">正社員</option>
+                                                <option value="part">パート・アルバイト</option>
+                                                <option value="contract">契約社員</option>
+                                                <option value="dispatch">派遣社員</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">賃金（月額・税込） <span class="required">*</span></label>
+                                            <div class="relative">
+                                                <input type="number" name="emp_wage" placeholder="例：250000" class="spot-input pr-10" required>
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">円</span>
+                                            </div>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">週所定労働時間 <span class="required">*</span></label>
+                                            <div class="relative">
+                                                <input type="number" name="emp_hours" placeholder="例：40" min="1" max="60" class="spot-input pr-14" required>
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">時間</span>
+                                            </div>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">個人番号（マイナンバー）</label>
+                                            <input type="text" name="emp_mynum" placeholder="12桁の数字" maxlength="12" class="spot-input">
+                                            <p class="text-xs text-gray-400 mt-1">※入力される場合は通信環境にご注意ください</p>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">住所（都道府県市区町村）</label>
+                                            <input type="text" name="emp_address" placeholder="例：宮城県仙台市宮城野区" class="spot-input">
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">備考・特記事項</label>
+                                            <textarea name="notes" rows="3" placeholder="例：前職でも雇用保険に加入していました（前の会社名：〇〇）" class="spot-input"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <button type="submit" class="spot-submit-btn">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                        依頼内容を送信する
+                                    </button>
+                                    <p class="text-xs text-center text-gray-400 mt-3">送信後、担当者よりメールまたはお電話にてご連絡いたします（通常1営業日以内）</p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- ===== フォーム1: 雇用保険 資格喪失届・離職票 ===== -->
+                        <div id="spot-form-1" class="spot-form hidden">
+                            <div class="flex items-center gap-3 mb-8">
+                                <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">📤</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-blue-900">雇用保険被保険者資格喪失届</h3>
+                                    <p class="text-sm text-gray-500">退職・解雇時に必要な届出です（退職翌日から10日以内）</p>
+                                    <div class="mt-3 flex items-center gap-6">
+                                        <span class="text-sm font-bold text-gray-700">離職票：</span>
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="rikokuhyo" value="nashi" checked onchange="updateRikokuhyoFee()" class="accent-orange-500">
+                                            <span class="text-sm">不要（5,000円〜）</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="rikokuhyo" value="ari" onchange="updateRikokuhyoFee()" class="accent-orange-500">
+                                            <span class="text-sm">要（10,000円〜）</span>
+                                        </label>
+                                        <span id="rikokuhyo-fee" class="ml-2 text-orange-600 font-black text-sm">5,000円〜</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form id="spot-form-data-1" class="space-y-6">
+                                <div class="bg-orange-50 rounded-2xl p-5 mb-6">
+                                    <h4 class="font-bold text-orange-900 mb-4 flex items-center gap-2"><span class="bg-orange-600 text-white w-6 h-6 rounded text-xs flex items-center justify-center">会</span>事業所情報</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="spot-field">
+                                            <label class="spot-label">事業所名 <span class="required">*</span></label>
+                                            <input type="text" name="company" placeholder="例：株式会社〇〇" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">雇用保険事業所番号</label>
+                                            <input type="text" name="hellowork_no" placeholder="例：04-000000-0" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">担当者名 <span class="required">*</span></label>
+                                            <input type="text" name="contact_name" placeholder="例：田中 太郎" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">連絡先電話番号 <span class="required">*</span></label>
+                                            <input type="tel" name="contact_tel" placeholder="例：022-XXX-XXXX" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">メールアドレス <span class="required">*</span></label>
+                                            <input type="email" name="contact_email" placeholder="例：info@example.com" class="spot-input" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-2xl p-5">
+                                    <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2"><span class="bg-orange-600 text-white w-6 h-6 rounded text-xs flex items-center justify-center">被</span>被保険者（退職従業員）情報</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="spot-field">
+                                            <label class="spot-label">氏名（漢字） <span class="required">*</span></label>
+                                            <input type="text" name="emp_name_kanji" placeholder="例：山田 花子" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">氏名（カナ） <span class="required">*</span></label>
+                                            <input type="text" name="emp_name_kana" placeholder="例：ヤマダ ハナコ" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">生年月日 <span class="required">*</span></label>
+                                            <input type="date" name="emp_birth" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">性別 <span class="required">*</span></label>
+                                            <select name="emp_gender" class="spot-input" required>
+                                                <option value="">選択してください</option>
+                                                <option value="male">男性</option>
+                                                <option value="female">女性</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">雇用保険被保険者番号</label>
+                                            <input type="text" name="hoken_no" placeholder="例：1234-567890-1" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">退職年月日 <span class="required">*</span></label>
+                                            <input type="date" name="retire_date" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">離職理由 <span class="required">*</span></label>
+                                            <select name="retire_reason" class="spot-input" required>
+                                                <option value="">選択してください</option>
+                                                <option value="11">定年</option>
+                                                <option value="12">移籍出向</option>
+                                                <option value="21">期間満了（更新なし・本人希望）</option>
+                                                <option value="22">期間満了（更新なし・会社都合）</option>
+                                                <option value="23A">期間満了（更新なし・本人都合）</option>
+                                                <option value="31">勧奨退職</option>
+                                                <option value="32">会社解散・事業所閉鎖</option>
+                                                <option value="33A">人員整理・解雇</option>
+                                                <option value="33B">労働条件悪化による辞職</option>
+                                                <option value="33C">事業主都合の離職</option>
+                                                <option value="40A">正当な理由のある自己都合退職</option>
+                                                <option value="40B">正当な理由のない自己都合退職</option>
+                                                <option value="51">重責解雇</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">資格取得日（入社日）</label>
+                                            <input type="date" name="acquire_date" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">離職票の発行 <span class="required">*</span></label>
+                                            <select name="rishoku_hakkoh" class="spot-input" required>
+                                                <option value="">選択してください</option>
+                                                <option value="yes">要（本人が失業給付を希望）</option>
+                                                <option value="no">不要</option>
+                                                <option value="unknown">本人に確認中</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">退職者の現住所（離職票送付先）</label>
+                                            <input type="text" name="retire_address" placeholder="例：宮城県仙台市宮城野区〇〇1-2-3" class="spot-input">
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">被保険者期間中の賃金（直近6ヶ月分・概算）</label>
+                                            <textarea name="wage_history" rows="3" placeholder="例：4月250,000円 / 5月260,000円 / 6月250,000円 / 7月255,000円 / 8月250,000円 / 9月260,000円" class="spot-input"></textarea>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">備考・特記事項</label>
+                                            <textarea name="notes" rows="3" placeholder="例：有給消化後の退職です。退職日：〇月〇日" class="spot-input"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <button type="submit" class="spot-submit-btn">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                        依頼内容を送信する
+                                    </button>
+                                    <p class="text-xs text-center text-gray-400 mt-3">送信後、担当者よりメールまたはお電話にてご連絡いたします（通常1営業日以内）</p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- ===== フォーム2: 社会保険 資格取得届 ===== -->
+                        <div id="spot-form-2" class="spot-form hidden">
+                            <div class="flex items-center gap-3 mb-8">
+                                <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🏥</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-blue-900">健康保険・厚生年金保険被保険者資格取得届</h3>
+                                    <p class="text-sm text-gray-500">入社・加入資格発生時の届出です（5日以内）</p>
+                                </div>
+                            </div>
+
+                            <form id="spot-form-data-2" class="space-y-6">
+                                <div class="bg-green-50 rounded-2xl p-5 mb-6">
+                                    <h4 class="font-bold text-green-900 mb-4 flex items-center gap-2"><span class="bg-green-700 text-white w-6 h-6 rounded text-xs flex items-center justify-center">会</span>事業所情報</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="spot-field">
+                                            <label class="spot-label">事業所名 <span class="required">*</span></label>
+                                            <input type="text" name="company" placeholder="例：株式会社〇〇" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">健保・年金の事業所整理記号番号</label>
+                                            <input type="text" name="kenpo_no" placeholder="例：〇〇-000000" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">担当者名 <span class="required">*</span></label>
+                                            <input type="text" name="contact_name" placeholder="例：田中 太郎" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">連絡先電話番号 <span class="required">*</span></label>
+                                            <input type="tel" name="contact_tel" placeholder="例：022-XXX-XXXX" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">メールアドレス <span class="required">*</span></label>
+                                            <input type="email" name="contact_email" placeholder="例：info@example.com" class="spot-input" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-2xl p-5">
+                                    <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2"><span class="bg-green-600 text-white w-6 h-6 rounded text-xs flex items-center justify-center">被</span>被保険者情報</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="spot-field">
+                                            <label class="spot-label">氏名（漢字） <span class="required">*</span></label>
+                                            <input type="text" name="emp_name_kanji" placeholder="例：山田 花子" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">氏名（カナ） <span class="required">*</span></label>
+                                            <input type="text" name="emp_name_kana" placeholder="例：ヤマダ ハナコ" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">生年月日 <span class="required">*</span></label>
+                                            <input type="date" name="emp_birth" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">性別 <span class="required">*</span></label>
+                                            <select name="emp_gender" class="spot-input" required>
+                                                <option value="">選択してください</option>
+                                                <option value="male">男性</option>
+                                                <option value="female">女性</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">資格取得日（入社日） <span class="required">*</span></label>
+                                            <input type="date" name="acquire_date" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">報酬月額（税込） <span class="required">*</span></label>
+                                            <div class="relative">
+                                                <input type="number" name="emp_salary" placeholder="例：250000" class="spot-input pr-10" required>
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">円</span>
+                                            </div>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">住所（都道府県以下） <span class="required">*</span></label>
+                                            <input type="text" name="emp_address" placeholder="例：宮城県仙台市宮城野区〇〇1-2-3" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">基礎年金番号</label>
+                                            <input type="text" name="emp_nenkin_no" placeholder="例：1234-567890" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">個人番号（マイナンバー）</label>
+                                            <input type="text" name="emp_mynum" placeholder="12桁の数字" maxlength="12" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">60歳以上の方・短時間労働者</label>
+                                            <select name="emp_special" class="spot-input">
+                                                <option value="none">該当なし</option>
+                                                <option value="over60">60歳以上の方</option>
+                                                <option value="short">短時間労働者（週20時間以上30時間未満）</option>
+                                                <option value="both">両方該当</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">扶養に入れる家族（氏名・続柄・生年月日・年収）</label>
+                                            <textarea name="dependents" rows="3" placeholder="例：山田 次郎（配偶者・1980年4月1日生・年収90万円）" class="spot-input"></textarea>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">備考・特記事項</label>
+                                            <textarea name="notes" rows="2" placeholder="例：前職の健康保険証の返却が遅れています" class="spot-input"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <button type="submit" class="spot-submit-btn" style="background: linear-gradient(135deg, #059669, #047857);">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                        依頼内容を送信する
+                                    </button>
+                                    <p class="text-xs text-center text-gray-400 mt-3">送信後、担当者よりメールまたはお電話にてご連絡いたします（通常1営業日以内）</p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- ===== フォーム3: 社会保険 資格喪失届 ===== -->
+                        <div id="spot-form-3" class="spot-form hidden">
+                            <div class="flex items-center gap-3 mb-8">
+                                <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🚪</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-blue-900">健康保険・厚生年金保険被保険者資格喪失届</h3>
+                                    <p class="text-sm text-gray-500">退職・資格喪失時の届出です（5日以内）</p>
+                                </div>
+                            </div>
+
+                            <form id="spot-form-data-3" class="space-y-6">
+                                <div class="bg-purple-50 rounded-2xl p-5 mb-6">
+                                    <h4 class="font-bold text-purple-900 mb-4 flex items-center gap-2"><span class="bg-purple-700 text-white w-6 h-6 rounded text-xs flex items-center justify-center">会</span>事業所情報</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="spot-field">
+                                            <label class="spot-label">事業所名 <span class="required">*</span></label>
+                                            <input type="text" name="company" placeholder="例：株式会社〇〇" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">健保・年金の事業所整理記号番号</label>
+                                            <input type="text" name="kenpo_no" placeholder="例：〇〇-000000" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">担当者名 <span class="required">*</span></label>
+                                            <input type="text" name="contact_name" placeholder="例：田中 太郎" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">連絡先電話番号 <span class="required">*</span></label>
+                                            <input type="tel" name="contact_tel" placeholder="例：022-XXX-XXXX" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">メールアドレス <span class="required">*</span></label>
+                                            <input type="email" name="contact_email" placeholder="例：info@example.com" class="spot-input" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-2xl p-5">
+                                    <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2"><span class="bg-purple-600 text-white w-6 h-6 rounded text-xs flex items-center justify-center">被</span>被保険者情報</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="spot-field">
+                                            <label class="spot-label">氏名（漢字） <span class="required">*</span></label>
+                                            <input type="text" name="emp_name_kanji" placeholder="例：山田 花子" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">氏名（カナ） <span class="required">*</span></label>
+                                            <input type="text" name="emp_name_kana" placeholder="例：ヤマダ ハナコ" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">生年月日 <span class="required">*</span></label>
+                                            <input type="date" name="emp_birth" class="spot-input" required>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">性別 <span class="required">*</span></label>
+                                            <select name="emp_gender" class="spot-input" required>
+                                                <option value="">選択してください</option>
+                                                <option value="male">男性</option>
+                                                <option value="female">女性</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">被保険者証の記号・番号</label>
+                                            <input type="text" name="hoken_no" placeholder="例：〇〇-12345678" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">資格喪失日（退職翌日） <span class="required">*</span></label>
+                                            <input type="date" name="lose_date" class="spot-input" required>
+                                            <p class="text-xs text-gray-400 mt-1">例：3月31日退職 → 4月1日が喪失日</p>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">喪失理由 <span class="required">*</span></label>
+                                            <select name="lose_reason" class="spot-input" required>
+                                                <option value="">選択してください</option>
+                                                <option value="1">死亡</option>
+                                                <option value="3">適用除外（週30時間未満等）</option>
+                                                <option value="4">70歳到達による厚生年金のみ喪失</option>
+                                                <option value="5">退職・解雇</option>
+                                                <option value="6">転勤</option>
+                                                <option value="9">その他</option>
+                                            </select>
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">基礎年金番号</label>
+                                            <input type="text" name="emp_nenkin_no" placeholder="例：1234-567890" class="spot-input">
+                                        </div>
+                                        <div class="spot-field">
+                                            <label class="spot-label">健康保険証の枚数</label>
+                                            <div class="relative">
+                                                <input type="number" name="card_count" placeholder="例：2" min="1" max="20" class="spot-input pr-10">
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">枚</span>
+                                            </div>
+                                            <p class="text-xs text-gray-400 mt-1">被保険者本人＋扶養者の合計枚数</p>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">被扶養者の喪失が必要な方（氏名・続柄）</label>
+                                            <textarea name="dep_lose" rows="2" placeholder="例：山田 次郎（配偶者）、山田 三花（子）" class="spot-input"></textarea>
+                                        </div>
+                                        <div class="spot-field md:col-span-2">
+                                            <label class="spot-label">備考・特記事項</label>
+                                            <textarea name="notes" rows="2" placeholder="例：健康保険証は退職日に本人から回収済みです" class="spot-input"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <button type="submit" class="spot-submit-btn" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                        依頼内容を送信する
+                                    </button>
+                                    <p class="text-xs text-center text-gray-400 mt-3">送信後、担当者よりメールまたはお電話にてご連絡いたします（通常1営業日以内）</p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- 送信完了メッセージ -->
+                        <div id="spot-success" class="hidden text-center py-16">
+                            <div class="text-6xl mb-6">✅</div>
+                            <h3 class="text-2xl font-bold text-green-700 mb-4">依頼を受け付けました！</h3>
+                            <p class="text-gray-600 mb-2">ご入力いただいた内容をカミウエ社会保険労務士事務所へ送信しました。</p>
+                            <p class="text-gray-600 mb-8">通常1営業日以内に担当者よりご連絡いたします。</p>
+                            <div class="bg-blue-50 rounded-2xl p-6 max-w-md mx-auto mb-8 text-left">
+                                <p class="font-bold text-blue-900 mb-2">📞 お急ぎの場合はお電話ください</p>
+                                <p class="text-blue-800 text-lg font-bold">070-1047-1625</p>
+                                <p class="text-sm text-gray-500">平日 9:00〜17:00</p>
+                            </div>
+                            <button onclick="spotReset()" class="bg-blue-900 text-white font-bold py-3 px-8 rounded-xl hover:bg-blue-800 transition">別の手続きを依頼する</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 料金・注意事項 -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-md border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/></svg>
+                            スポット手続き料金（目安）
+                        </h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="text-gray-700">雇用保険 資格取得届</span>
+                                <span class="font-bold text-blue-900">5,000円〜</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="text-gray-700">雇用保険 資格喪失届（離職票なし）</span>
+                                <span class="font-bold text-blue-900">5,000円〜</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="text-gray-700">雇用保険 資格喪失届（離職票あり）</span>
+                                <span class="font-bold text-blue-900">10,000円〜</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="text-gray-700">社会保険 資格取得届</span>
+                                <span class="font-bold text-blue-900">5,000円〜</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-gray-700">社会保険 資格喪失届</span>
+                                <span class="font-bold text-blue-900">5,000円〜</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-4">※税込価格。複数件同時依頼の場合は割引があります。詳細はお見積もりいたします。</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-md border border-orange-100">
+                        <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                            ご依頼の流れ
+                        </h4>
+                        <ol class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 bg-blue-900 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                                <span>フォームに必要事項を入力し送信</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 bg-blue-900 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                                <span>担当者より内容確認・お見積りのご連絡（1営業日以内）</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 bg-blue-900 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                                <span>ご承認後、手続き代行報酬のお振り込み</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 bg-blue-900 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                                <span>入金確認後、電子申請にて手続き代行</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</span>
+                                <span>手続き完了後、結果をメール・郵送にてご報告</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+        </section>

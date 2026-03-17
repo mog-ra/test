@@ -1,0 +1,129 @@
+        <!-- BLOG PAGE -->
+        <section id="page-blog" class="hidden bg-gray-50">
+
+            <!-- ページヘッダー -->
+            <div class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-20 md:py-28 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+                <div class="container mx-auto px-4 max-w-6xl relative z-10">
+                    <div class="flex items-center gap-2 text-blue-300 text-sm mb-4">
+                        <button onclick="showPage('home')" class="hover:text-white transition">ホーム</button>
+                        <span>/</span>
+                        <span class="text-white">労務管理コラム</span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">労務管理コラム</h2>
+                    <p class="text-blue-200 text-lg max-w-2xl">仙台の中小企業経営者・労務担当者の方に向けた、実践的な労務管理情報をお届けします。</p>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 max-w-6xl py-16 md:py-20">
+
+                <!-- カテゴリーフィルター -->
+                <div class="flex flex-wrap gap-3 mb-12" id="blog-category-filters">
+                    <button onclick="filterBlog('all')" data-cat="all" class="blog-filter-btn active-filter px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200">すべて</button>
+                    <button onclick="filterBlog('助成金')" data-cat="助成金" class="blog-filter-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200">💰 助成金</button>
+                    <button onclick="filterBlog('リスク管理')" data-cat="リスク管理" class="blog-filter-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200">⚠️ リスク管理</button>
+                    <button onclick="filterBlog('法令遵守')" data-cat="法令遵守" class="blog-filter-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200">📋 法令遵守</button>
+                    <button onclick="filterBlog('DX推進')" data-cat="DX推進" class="blog-filter-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200">📱 DX推進</button>
+                    <button onclick="filterBlog('採用・定着')" data-cat="採用・定着" class="blog-filter-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200">👥 採用・定着</button>
+                </div>
+
+                <!-- 記事グリッド -->
+                <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- JSで描画 -->
+                </div>
+                <div class="mt-16 text-center bg-white rounded-2xl p-12 shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">個別のご相談も承ります</h3>
+                    <p class="text-gray-600 mb-6">コラムの内容について、貴社の状況に合わせた具体的なアドバイスが可能です</p>
+                    <button onclick="showPage('contact')" class="bg-gradient-to-r from-blue-900 to-blue-700 text-white font-bold py-4 px-10 rounded-xl hover:from-blue-800 hover:to-blue-600 transition shadow-lg">無料相談を申し込む</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTICLE DETAIL PAGE -->
+        <section id="page-article-detail" class="hidden bg-white">
+
+            <!-- 記事ヘッダー（JSで動的に色変更） -->
+            <div id="article-header" class="card-header-助成金 py-24 md:py-32 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+                <div class="container mx-auto px-4 max-w-4xl relative z-10">
+                    <div class="flex items-center gap-2 text-white/70 text-sm mb-6">
+                        <button onclick="showPage('home')" class="hover:text-white transition">ホーム</button>
+                        <span>/</span>
+                        <button onclick="showPage('blog')" class="hover:text-white transition">労務管理コラム</button>
+                        <span>/</span>
+                        <span class="text-white">記事詳細</span>
+                    </div>
+                    <div id="article-meta"><!-- JSで描画 --></div>
+                </div>
+            </div>
+
+            <!-- 記事本文 -->
+            <div class="container mx-auto px-4 max-w-4xl py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                    <!-- メインコンテンツ -->
+                    <div class="lg:col-span-2">
+                        <div id="article-body" class="prose-custom">
+                            <!-- JSで描画 -->
+                        </div>
+
+                        <!-- 記事下CTA -->
+                        <div class="mt-12 bg-gradient-to-br from-blue-900 to-blue-700 rounded-3xl p-8 md:p-10 text-white text-center relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-20 -mt-20"></div>
+                            <p class="text-blue-200 text-sm mb-2">この記事について詳しく聞きたい方へ</p>
+                            <h3 class="text-2xl font-black mb-4">まずは無料相談から</h3>
+                            <p class="text-blue-100 text-sm mb-6 leading-relaxed">貴社の状況に合わせた具体的なアドバイスをご提供します。<br>初回60分・完全無料でご相談いただけます。</p>
+                            <button onclick="showPage('contact')"
+                                class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white font-black py-4 px-10 rounded-xl transition shadow-xl text-base transform hover:scale-105">
+                                <span id="article-cta-text">無料相談を申し込む</span>
+                            </button>
+                            <p class="text-blue-300 text-xs mt-4">📞 070-1047-1625 / 平日 9:00〜17:00</p>
+                        </div>
+                    </div>
+
+                    <!-- サイドバー -->
+                    <div class="lg:col-span-1 space-y-8">
+
+                        <!-- コラム一覧に戻る -->
+                        <div>
+                            <button onclick="showPage('blog')"
+                                class="w-full flex items-center gap-3 text-blue-900 font-bold border-2 border-blue-900 px-5 py-3.5 rounded-xl hover:bg-blue-900 hover:text-white transition group">
+                                <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                                コラム一覧に戻る
+                            </button>
+                        </div>
+
+                        <!-- 関連記事 -->
+                        <div>
+                            <h3 class="text-sm font-black text-gray-500 uppercase tracking-widest mb-4">関連記事</h3>
+                            <div id="article-related" class="space-y-4">
+                                <!-- JSで描画 -->
+                            </div>
+                        </div>
+
+                        <!-- 事務所情報 -->
+                        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+                            <h3 class="font-black text-blue-900 mb-3 text-sm">カミウエ社会保険労務士事務所</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed mb-4">仙台市宮城野区を拠点に、中小企業の労務管理をワンストップでサポート。</p>
+                            <ul class="space-y-2 text-xs text-gray-600">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-blue-700" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                    <a href="tel:07010471625" class="hover:text-blue-900 font-bold">070-1047-1625</a>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-blue-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                                    <span>平日 9:00〜17:00</span>
+                                </li>
+                            </ul>
+                            <button onclick="showPage('contact')"
+                                class="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold py-2.5 rounded-xl transition">
+                                無料相談を申し込む
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+

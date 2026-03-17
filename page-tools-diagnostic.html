@@ -1,0 +1,85 @@
+        <!-- CHECKUP PAGE -->
+        <section id="page-checkup" class="hidden py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-12">
+                    <div class="w-24 h-24 mx-auto mb-6">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="90" fill="#DBEAFE"/>
+                            <rect x="40" y="50" width="70" height="50" fill="#1E40AF" rx="10"/>
+                            <path d="M 50 100 L 45 110 L 60 100 Z" fill="#1E40AF"/>
+                            <text x="75" y="82" font-size="32" font-weight="bold" fill="#FFF" text-anchor="middle">Q</text>
+                            <rect x="90" y="90" width="70" height="50" fill="#F97316" rx="10"/>
+                            <path d="M 150 140 L 155 150 L 140 140 Z" fill="#F97316"/>
+                            <text x="125" y="122" font-size="32" font-weight="bold" fill="#FFF" text-anchor="middle">A</text>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6 section-title">労務リスク診断</h2>
+                    <p class="text-gray-600 mt-8">20の質問で貴社の労務管理状況をチェック</p>
+                </div>
+                <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+                    <div id="checkup-intro">
+                        <p class="text-gray-600 mb-8 leading-relaxed">このチェックリストは、貴社の労務管理における潜在的なリスクを発見するためのツールです。<br>各質問に正直にお答えいただくことで、改善が必要な項目が明確になります。</p>
+                        <div class="text-center mt-8"><button onclick="window.startCheckup()" class="bg-gradient-to-r from-blue-900 to-blue-700 text-white font-bold py-5 px-12 rounded-xl hover:from-blue-800 hover:to-blue-600 transition shadow-lg text-lg">診断を開始する</button></div>
+                    </div>
+                    <div id="checkup-questions" style="display: none;"></div>
+                    <div id="checkup-result" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBSIDY SIMULATOR PAGE -->
+        <section id="page-subsidy-sim" class="hidden py-16 md:py-24 bg-gradient-to-br from-orange-50 to-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-5xl font-bold text-blue-900 mb-6">助成金診断ツール</h2>
+                    <p class="text-gray-600 text-lg">あなたの会社が申請できる助成金を診断</p>
+                </div>
+                <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+                    <div id="subsidy-form">
+                        <form id="subsidy-diagnostic-form" class="space-y-8">
+                            <div>
+                                <label class="block text-lg font-bold text-blue-900 mb-4">1. 業種を選択してください</label>
+                                <select name="industry" class="w-full border-2 border-gray-300 rounded-xl p-4 focus:border-blue-500 focus:outline-none text-lg" required>
+                                    <option value="">選択してください</option>
+                                    <option value="construction">建設業</option>
+                                    <option value="manufacturing">製造業</option>
+                                    <option value="retail">小売業</option>
+                                    <option value="restaurant">飲食業</option>
+                                    <option value="it">IT・情報サービス業</option>
+                                    <option value="medical">医療・福祉</option>
+                                    <option value="other">その他</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-lg font-bold text-blue-900 mb-4">2. 従業員数を選択してください</label>
+                                <select name="employees" class="w-full border-2 border-gray-300 rounded-xl p-4 focus:border-blue-500 focus:outline-none text-lg" required>
+                                    <option value="">選択してください</option>
+                                    <option value="1-5">1〜5名</option>
+                                    <option value="6-20">6〜20名</option>
+                                    <option value="21-50">21〜50名</option>
+                                    <option value="51-100">51〜100名</option>
+                                    <option value="100+">100名以上</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-lg font-bold text-blue-900 mb-4">3. 実施予定の施策（複数選択可）</label>
+                                <div class="space-y-3">
+                                    <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:bg-blue-50 cursor-pointer transition"><input type="checkbox" name="plan" value="hiring" class="w-5 h-5 text-blue-600"><span class="text-gray-700">新規採用を検討している</span></label>
+                                    <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:bg-blue-50 cursor-pointer transition"><input type="checkbox" name="plan" value="regular" class="w-5 h-5 text-blue-600"><span class="text-gray-700">非正規社員の正社員化を検討している</span></label>
+                                    <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:bg-blue-50 cursor-pointer transition"><input type="checkbox" name="plan" value="training" class="w-5 h-5 text-blue-600"><span class="text-gray-700">従業員の研修・教育を実施予定</span></label>
+                                    <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:bg-blue-50 cursor-pointer transition"><input type="checkbox" name="plan" value="wage" class="w-5 h-5 text-blue-600"><span class="text-gray-700">賃上げを検討している</span></label>
+                                    <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:bg-blue-50 cursor-pointer transition"><input type="checkbox" name="plan" value="equipment" class="w-5 h-5 text-blue-600"><span class="text-gray-700">設備投資を予定している</span></label>
+                                    <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:bg-blue-50 cursor-pointer transition"><input type="checkbox" name="plan" value="worklife" class="w-5 h-5 text-blue-600"><span class="text-gray-700">育児・介護との両立支援を充実させたい</span></label>
+                                </div>
+                            </div>
+                            <div class="text-center pt-6"><button type="submit" class="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold py-5 px-12 rounded-xl hover:from-orange-600 hover:to-orange-700 transition shadow-lg text-lg">診断結果を見る</button></div>
+                        </form>
+                    </div>
+                    <div id="subsidy-result" class="hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 給与計算ツール PAGE（新規追加）                            -->
+        <!-- ========================================================= -->

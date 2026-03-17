@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宮城 仙台 社労士 | カミウエ社会保険労務士事務所 - 仙台市宮城野区の労務パートナー</title>
+    <meta name="description" content="仙台市宮城野区の社会保険労務士事務所。助成金申請・給与計算・就業規則・労務相談をワンストップでサポート。初回60分無料相談受付中。地域密着10年以上の実績。">
+    <meta name="keywords" content="社労士,社会保険労務士,仙台,宮城野区,助成金,給与計算,就業規則,労務相談,労務管理,宮城県">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="宮城 仙台 社労士 | カミウエ社会保険労務士事務所 - 仙台市宮城野区の労務パートナー">
+    <meta property="og:description" content="仙台市宮城野区の社会保険労務士事務所。助成金申請・給与計算・就業規則・労務相談をワンストップでサポート。初回60分無料相談受付中。">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="宮城 仙台 社労士 | カミウエ社会保険労務士事務所">
+    <meta name="twitter:description" content="仙台市宮城野区の社会保険労務士事務所。助成金申請・給与計算・労務相談をサポート。初回60分無料相談受付中。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <meta name="google-site-verification" content="CzQ1gV_RKAq7_NziXejLsGk4pVfp99mz1Lw8mmEbXUg" />
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <button onclick="showPage('home')" class="flex items-center gap-3 hover:opacity-80 transition">
+                <div class="w-16 h-16">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                        <ellipse cx="100" cy="100" rx="95" ry="75" fill="#FDB913"/>
+                        <rect x="50" y="40" width="20" height="120" rx="10" fill="#2E5BA5"/>
+                        <path d="M 70 70 L 145 35" stroke="#2E5BA5" stroke-width="20" stroke-linecap="round" fill="none"/>
+                        <path d="M 70 100 L 145 165" stroke="#2E5BA5" stroke-width="20" stroke-linecap="round" fill="none"/>
+                        <circle cx="60" cy="50" r="25" fill="#C8102E"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-blue-900 leading-tight">カミウエ社会保険労務士事務所</h1>
+                    <p class="text-xs text-gray-500">宮城 仙台 社労士 | KAMIUE SR OFFICE</p>
+                </div>
+            </button>
+            <nav class="hidden md:flex gap-8 items-center text-sm font-medium">
+                <button id="nav-home" onclick="showPage('home')" class="active-tab pb-1 transition hover:text-blue-900">ホーム</button>
+                <button id="nav-services" onclick="showPage('services')" class="pb-1 transition hover:text-blue-900">サービス</button>
+                <button id="nav-about" onclick="showPage('about')" class="pb-1 transition hover:text-blue-900">事務所紹介</button>
+                <div class="relative group">
+                    <button class="pb-1 transition hover:text-blue-900 flex items-center gap-1">
+                        お役立ちコンテンツ
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="hidden group-hover:block absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                        <button onclick="showPage('blog')" class="w-full text-left px-4 py-3 hover:bg-blue-50 transition text-sm">📝 労務管理コラム</button>
+                        <button onclick="showPage('checkup')" class="w-full text-left px-4 py-3 hover:bg-blue-50 transition text-sm">✅ 労務リスク診断</button>
+                        <button onclick="showPage('subsidy-sim')" class="w-full text-left px-4 py-3 hover:bg-blue-50 transition text-sm">💰 助成金診断</button>
+                        <button onclick="showPage('salary-calc')" class="w-full text-left px-4 py-3 hover:bg-blue-50 transition text-sm">🧮 給与計算ツール</button>
+                        <button onclick="showPage('price-sim')" class="w-full text-left px-4 py-3 hover:bg-amber-50 transition text-sm font-semibold text-amber-700">🧮 料金シミュレーター</button>
+                        <button onclick="showPage('download')" class="w-full text-left px-4 py-3 hover:bg-indigo-50 transition text-sm font-semibold text-indigo-700">📥 無料資料ダウンロード</button>
+                        <hr class="my-1 border-gray-100">
+                        <button onclick="showPage('spot')" class="w-full text-left px-4 py-3 hover:bg-orange-50 transition text-sm font-bold text-orange-700">📋 手続き代行依頼</button>
+                    </div>
+                </div>
+                <button id="nav-links" onclick="showPage('links')" class="pb-1 transition hover:text-blue-900">関連リンク</button>
+                <button id="nav-spot" onclick="showPage('spot')" class="pb-1 transition hover:text-blue-900 text-orange-600 font-bold">手続き依頼</button>
+                <button id="nav-faq" onclick="showPage('faq')" class="pb-1 transition hover:text-blue-900">よくある質問</button>
+                <button id="nav-contact" onclick="showPage('contact')" class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-lg hover:from-orange-600 hover:to-orange-700 transition shadow-md font-bold">お問い合わせ</button>
+            </nav>
+            <div class="md:hidden">
+                <button class="text-blue-900 p-2" onclick="toggleMobileMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-4 space-y-3 shadow-inner">
+            <button onclick="showPage('home')" class="block w-full py-3 text-left font-medium hover:bg-gray-50 rounded px-3">ホーム</button>
+            <button onclick="showPage('services')" class="block w-full py-3 text-left font-medium hover:bg-gray-50 rounded px-3">サービス・料金</button>
+            <button onclick="showPage('about')" class="block w-full py-3 text-left font-medium hover:bg-gray-50 rounded px-3">事務所紹介</button>
+            <div class="pl-3">
+                <p class="text-xs text-gray-500 font-bold py-2">お役立ちコンテンツ</p>
+                <button onclick="showPage('blog')" class="block w-full py-2 text-left text-sm hover:bg-gray-50 rounded px-3">📝 労務管理コラム</button>
+                <button onclick="showPage('checkup')" class="block w-full py-2 text-left text-sm hover:bg-gray-50 rounded px-3">✅ 労務リスク診断</button>
+                <button onclick="showPage('subsidy-sim')" class="block w-full py-2 text-left text-sm hover:bg-gray-50 rounded px-3">💰 助成金診断</button>
+                <button onclick="showPage('salary-calc')" class="block w-full py-2 text-left text-sm hover:bg-gray-50 rounded px-3">🧮 給与計算ツール</button>
+                <button onclick="showPage('price-sim')" class="block w-full py-2 text-left text-sm hover:bg-amber-50 rounded px-3 font-semibold text-amber-700">🧮 料金シミュレーター</button>
+                <button onclick="showPage('download')" class="block w-full py-2 text-left text-sm hover:bg-indigo-50 rounded px-3 font-semibold text-indigo-700">📥 無料資料ダウンロード</button>
+            </div>
+            <button onclick="showPage('links')" class="block w-full py-3 text-left font-medium hover:bg-gray-50 rounded px-3">関連リンク</button>
+            <button onclick="showPage('spot')" class="block w-full py-3 text-left font-bold text-orange-600 hover:bg-orange-50 rounded px-3">📋 手続き依頼</button>
+            <button onclick="showPage('faq')" class="block w-full py-3 text-left font-medium hover:bg-gray-50 rounded px-3">よくある質問</button>
+            <button onclick="showPage('contact')" class="block w-full py-3 text-left font-bold text-orange-600 hover:bg-gray-50 rounded px-3">お問い合わせ</button>
+        </div>
+    </header>
+
+    <!-- Page Content Container -->
+    <div id="content">
+        <!--
+            ページコンテンツは JavaScript (js/page-loader.js) により
+            pages/ 以下の各 HTML ファイルから動的に読み込まれます。
+
+            ページファイル一覧:
+              pages/page-home.html          ホームページ
+              pages/page-services.html      サービス・料金
+              pages/page-about.html         事務所紹介
+              pages/page-faq.html           よくある質問
+              pages/page-links.html         関連リンク
+              pages/page-contact.html       お問い合わせ
+              pages/page-blog.html          労務管理コラム（記事詳細含む）
+              pages/page-tools-diagnostic.html  労務リスク診断 / 助成金診断
+              pages/page-salary-calc.html   給与計算ツール
+              pages/page-download.html      無料資料ダウンロード（サンクスページ含む）
+              pages/page-price-sim.html     料金シミュレーター
+              pages/page-solutions.html     ソリューション詳細
+              pages/page-spot.html          スポット手続き依頼
+        -->
+        <div id="page-loading" style="min-height:60vh;display:flex;align-items:center;justify-content:center;">
+            <p class="text-gray-400 text-sm">読み込み中...</p>
+        </div>
+    </div>
+    <!-- /content -->
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-blue-900 to-blue-800 text-white py-12 md:py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-16 h-16">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                                <ellipse cx="100" cy="100" rx="95" ry="75" fill="#FDB913"/>
+                                <rect x="50" y="40" width="20" height="120" rx="10" fill="#2E5BA5"/>
+                                <path d="M 70 70 L 145 35" stroke="#2E5BA5" stroke-width="20" stroke-linecap="round" fill="none"/>
+                                <path d="M 70 100 L 145 165" stroke="#2E5BA5" stroke-width="20" stroke-linecap="round" fill="none"/>
+                                <circle cx="60" cy="50" r="25" fill="#C8102E"/>
+                            </svg>
+                        </div>
+                        <div><h3 class="font-bold text-lg">カミウエ社会保険労務士事務所</h3></div>
+                    </div>
+                    <p class="text-sm text-blue-100 leading-relaxed">宮城・仙台・宮城野区の企業様の労務パートナーとして、誠実に、確かな専門知識でサポートいたします。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-lg">サイトマップ</h4>
+                    <ul class="space-y-3 text-sm text-blue-100">
+                        <li><button onclick="showPage('home')" class="hover:text-white transition">ホーム</button></li>
+                        <li><button onclick="showPage('services')" class="hover:text-white transition">サービス・料金</button></li>
+                        <li><button onclick="showPage('about')" class="hover:text-white transition">事務所紹介</button></li>
+                        <li><button onclick="showPage('links')" class="hover:text-white transition">関連リンク</button></li>
+                        <li><button onclick="showPage('faq')" class="hover:text-white transition">よくある質問</button></li>
+                        <li><button onclick="showPage('contact')" class="hover:text-white transition">お問い合わせ</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-lg">お役立ちツール</h4>
+                    <ul class="space-y-3 text-sm text-blue-100">
+                        <li><button onclick="showPage('blog')" class="hover:text-white transition">📝 労務管理コラム</button></li>
+                        <li><button onclick="showPage('checkup')" class="hover:text-white transition">✅ 労務リスク診断</button></li>
+                        <li><button onclick="showPage('subsidy-sim')" class="hover:text-white transition">💰 助成金診断</button></li>
+                        <li><button onclick="showPage('salary-calc')" class="hover:text-white transition">🧮 給与計算ツール</button></li>
+                        <li><button onclick="showPage('price-sim')" class="hover:text-white transition text-amber-200 font-semibold">🧮 料金シミュレーター</button></li>
+                        <li><button onclick="showPage('download')" class="hover:text-white transition text-indigo-200 font-semibold">📥 無料資料ダウンロード</button></li>
+                        <li><button onclick="showPage('spot')" class="hover:text-white transition font-bold text-orange-300">📋 手続きを依頼する</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-lg">お問い合わせ</h4>
+                    <ul class="space-y-3 text-sm text-blue-100">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg><a href="tel:07010471625" class="hover:text-white transition">070-1047-1625</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7300015d18121e1a061633141e121a1f5d101c1e"><span class="__cf_email__" data-cfemail="681b1a46030905011d0d280f05090104460b0705"><span class="__cf_email__" data-cfemail="87eee9e1e8c7ece6eaeef2e2a9e4e8ea">[email&#160;protected]</span></span></a></span></li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg><span>〒983-0005<br>宮城県仙台市宮城野区<br>福室字田中東二番25-6</span></li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg><span>平日 9:00〜17:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 pt-8 text-center text-sm text-blue-200">
+                <p>&copy; 2025 カミウエ社会保険労務士事務所 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- =============================================
+         チャットボット ウィジェット
+         ============================================= -->
+
+    <!-- チャット起動ボタン -->
+    <div id="chat-launcher" onclick="chatOpen()" title="ご相談はこちら">
+        <div id="chat-launcher-icon">
+            <svg id="chat-icon-bubble" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26">
+                <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+            </svg>
+            <svg id="chat-icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24" style="display:none;">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+        </div>
+        <span id="chat-launcher-label">ご相談</span>
+        <span id="chat-unread-badge" style="display:none;">1</span>
+    </div>
+
+    <!-- チャットウィンドウ -->
+    <div id="chat-window" class="chat-window-hidden">
+        <!-- ヘッダー -->
+        <div id="chat-header">
+            <div class="chat-header-left">
+                <div class="chat-avatar">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                        <ellipse cx="100" cy="100" rx="95" ry="75" fill="#FDB913"/>
+                        <rect x="50" y="40" width="20" height="120" rx="10" fill="#2E5BA5"/>
+                        <path d="M 70 70 L 145 35" stroke="#2E5BA5" stroke-width="20" stroke-linecap="round" fill="none"/>
+                        <path d="M 70 100 L 145 165" stroke="#2E5BA5" stroke-width="20" stroke-linecap="round" fill="none"/>
+                        <circle cx="60" cy="50" r="25" fill="#C8102E"/>
+                    </svg>
+                </div>
+                <div class="chat-header-info">
+                    <p class="chat-header-name">カミウエ社労士事務所</p>
+                    <p class="chat-header-status"><span class="chat-online-dot"></span>AIアシスタント対応中</p>
+                </div>
+            </div>
+            <button onclick="chatClose()" class="chat-close-btn" aria-label="閉じる">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18" height="18">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- メッセージエリア -->
+        <div id="chat-messages"></div>
+
+        <!-- 入力エリア -->
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="メッセージを入力..." autocomplete="off"
+                onkeydown="if(event.key==='Enter')chatSend()">
+            <button onclick="chatSend()" id="chat-send-btn" aria-label="送信">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18" height="18">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ===== JS読み込み ===== -->
+    <!-- コラムデータ（columns-data.js）は nav.js より先に読む必要があります -->
+    <script src="./columns-data.js"></script>
+
+    <!-- ページ構成・ナビゲーション制御 -->
+    <script src="./js/nav.js"></script>
+
+    <!-- ページHTMLを動的ロードするローダー -->
+    <script src="./js/page-loader.js"></script>
+
+    <!-- チャットボット -->
+    <script src="./js/chatbot.js"></script>
+
+    <!-- ヒーロー画像フェード -->
+    <script src="./js/hero.js"></script>
+
+    <!-- 各種ツール -->
+    <script src="./js/tools-download.js"></script>
+    <script src="./js/tools-price-sim.js"></script>
+    <script src="./js/tools-salary-calc.js"></script>
+    <script src="./js/tools-checkup.js"></script>
+    <script src="./js/tools-subsidy.js"></script>
+    <script src="./js/tools-spot.js"></script>
+
+    <!-- 初期化（すべてのJSより後に読み込む） -->
+    <script src="./js/init.js"></script>
+
+</body>
+</html>
